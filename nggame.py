@@ -2,7 +2,13 @@ from random import randint as ran
 import os
 import time
 print("Welcome to the number guessing game!")
-numlimit = int(input("Write your desired upper limit:"))
+while True:
+    numlimit = int(input("Write your desired upper limit:"))
+    if numlimit <= 6:
+        print("You can't set the upper limit less than the amount of lives. You sneaky cheater!")
+        continue
+    else:
+        break
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
 print("Ok then, let's play!")
@@ -10,12 +16,15 @@ lives = 6
 trueanswer = ran(0, numlimit)
 while True:
     if lives == 0:
-        print("I'm sorry, but you've no attempts left. Game over, thanks for playing!")
+        print("I'm sorry, but you've no attempts left. The correct number was ",trueanswer," . Game over, thanks for playing!")
         time.sleep(4)
         break
     print(" ")
     print("Remaining lives:",lives,"Number limit:",numlimit)
     useranswer = int(input("Guess a number :"))
+    if useranswer > numlimit:
+        print("Mate, that's higher than the limit you've just set. Are you drunk or something?")
+        continue
     if useranswer == trueanswer:
         print("Congratulations, you won at",6-lives,"attempts!")
         time.sleep(4)
