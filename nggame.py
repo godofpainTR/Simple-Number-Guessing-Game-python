@@ -66,19 +66,32 @@ while True:
         clear()
         continue
     elif 10 < abs(useranswer- trueanswer) <50:
-        print("Getting closer, less than 50 away from the answer!   Press ENTER")
+        print("Getting closer, less than 50 away from the answer!")
+        print("Therefore the number might be between:",useranswer-49,"-",useranswer+49)
+        print("Press ENTER")
         lives = lives - 1
         input()
         clear()
         continue
     elif 5 < abs(useranswer - trueanswer) < 10:
-        print("You are very close! The correct answer is less than 10 away!   Press ENTER")
+        print("You are very close! The correct answer is less than 10 away!")
+        print("Therefore the number might be between:", useranswer - 9, "-", useranswer + 9)
+        print("Press ENTER")
         lives = lives - 1
         input()
         clear()
         continue
-    elif abs(useranswer - trueanswer) < 5:
-        print("Almost there now! Only 5 away!   Press ENTER")
+    elif 3 < abs(useranswer - trueanswer) < 5:
+        print("Almost there now! Only 5 away!")
+        print("Therefore the number might be between:", useranswer - 4, "-", useranswer + 4)
+        print("Press ENTER")
+        lives = lives -1
+        input()
+        clear()
+    elif abs(useranswer - trueanswer) < 3:
+        print("Only 3 away!")
+        print("Therefore the number might be between:", useranswer - 2, "-", useranswer + 2)
+        print("Press ENTER")
         lives = lives -1
         input()
         clear()
