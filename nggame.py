@@ -8,12 +8,12 @@ print("Your options will determine your score multiplier.")
 time.sleep(4)
 for i in range(0,10):
     print("")
-defaultmultiplier = round(1000/6,3)
+defaultmultiplier = round(100/6,3)
 lives = int(input("How many lives do you need(default: 6)?"))
 print("")
 setlives = lives
 while True:
-    numlimit = int(input("Write your desired upper limit(default: 1000):"))
+    numlimit = int(input("Write your desired upper limit(default: 100):"))
     print("")
     if numlimit <= lives:
         print("You can't set the upper limit less than the amount of lives. You sneaky cheater!")
@@ -43,7 +43,7 @@ while True:
         print("Congratulations, you won at",attempts,"attempts!")
         print("Your multiplier was: ",usermultiplier,"X")
         #TODO: put a more sensible scoring formula here
-        userscore = (1/attempts)*1000*usermultiplier
+        userscore = round((1/attempts)*1000*usermultiplier)
         print("Therefore, your score is:",userscore)
         time.sleep(4)
         break
